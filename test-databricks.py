@@ -1,48 +1,55 @@
-# COMMAND ----------
-%sql
-SHOW DATABASES LIKE "sbp*";
+# Databricks notebook source
+# MAGIC %sql
+# MAGIC --Comment 
+# MAGIC SHOW DATABASES LIKE "sbp*";
 
 # COMMAND ----------
-%sql
-SHOW TABLES IN sbp_b900_public_work;
+
+# MAGIC %sql
+# MAGIC SHOW TABLES IN sbp_b900_public_work;
 
 # COMMAND ----------
-%sql
-CREATE TABLE sbp_b900_public_work.test_persons_databricks (
-  id int,
-  name string,
-  age int,
-  favColor string
-);
+
+# MAGIC %sql
+# MAGIC CREATE TABLE sbp_b900_public_work.test_persons_databricks (
+# MAGIC   id int,
+# MAGIC   name string,
+# MAGIC   age int,
+# MAGIC   favColor string
+# MAGIC );
 
 # COMMAND ----------
-%sql
-SHOW GRANT ON sbp_b900_public_work.test_persons_databricks;
-ALTER TABLE sbp_b900_public_work.test_persons_databricks owner to `AAD-GRP-bdap-sbx-dl-b900-public-contributor`;
+
+# MAGIC %sql
+# MAGIC SHOW GRANT ON sbp_b900_public_work.test_persons_databricks;
+# MAGIC ALTER TABLE sbp_b900_public_work.test_persons_databricks owner to `AAD-GRP-bdap-sbx-dl-b900-public-contributor`;
 
 # COMMAND ----------
-%sql
-INSERT INTO sbp_b900_public_work.ttest_persons_databricks VALUES
-  (1, "Alice Hammond", 38, "Blue"),
-  (2, "Joy Meyer", 20, "Red"),
-  (3, "Frieda Schmidt", 59, "Blue"),
-  (4, "Dong Seok", 44, "Blue"),
-  (5, "Camila Castillo", 32, "Green"),
-  (6, "Alba Cantu", 27, "Red");  
-SELECT * FROM sbp_b900_public_work.test_persons_databricks;
+
+# MAGIC %sql
+# MAGIC INSERT INTO sbp_b900_public_work.ttest_persons_databricks VALUES
+# MAGIC   (1, "Alice Hammond", 38, "Blue"),
+# MAGIC   (2, "Joy Meyer", 20, "Red"),
+# MAGIC   (3, "Frieda Schmidt", 59, "Blue"),
+# MAGIC   (4, "Dong Seok", 44, "Blue"),
+# MAGIC   (5, "Camila Castillo", 32, "Green"),
+# MAGIC   (6, "Alba Cantu", 27, "Red");  
+# MAGIC SELECT * FROM sbp_b900_public_work.test_persons_databricks;
 
 # COMMAND ----------
-%sql
-SELECT 
-  favColor, 
-  COUNT(*), 
-  AVG(age) 
-FROM 
-  sbp_b900_public_work.test_persons_databricks
-GROUP BY
-  favColor;
-  
-# COMMAND ----------
-%sql
-DROP TABLE sbp_b900_public_work.test_persons_databricks;
 
+# MAGIC %sql
+# MAGIC SELECT 
+# MAGIC   favColor, 
+# MAGIC   COUNT(*), 
+# MAGIC   AVG(age) 
+# MAGIC FROM 
+# MAGIC   sbp_b900_public_work.test_persons_databricks
+# MAGIC GROUP BY
+# MAGIC   favColor;
+# MAGIC   
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC DROP TABLE sbp_b900_public_work.test_persons_databricks;
