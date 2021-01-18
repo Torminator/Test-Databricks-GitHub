@@ -1,8 +1,15 @@
+# COMMAND ----------
 %sql
 SHOW DATABASES LIKE "sbp*";
+# COMMAND ----------
 
+# COMMAND ----------
+%sql
 SHOW TABLES IN sbp_b900_public_work;
+# COMMAND ----------
 
+# COMMAND ----------
+%sql
 CREATE TABLE sbp_b900_public_work.test_persons_databricks (
   id int,
   name string,
@@ -34,3 +41,4 @@ GROUP BY
   favColor;
 
 DROP TABLE sbp_b900_public_work.test_persons_databricks;
+# COMMAND ----------
