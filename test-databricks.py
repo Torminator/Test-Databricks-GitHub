@@ -1,11 +1,12 @@
 # Databricks notebook source
 # MAGIC %sql
-# MAGIC --Comment 
+# MAGIC -- Comment #1
 # MAGIC SHOW DATABASES LIKE "sbp*";
 
 # COMMAND ----------
 
 # MAGIC %sql
+# MAGIC -- Comment #2
 # MAGIC SHOW TABLES IN sbp_b900_public_work;
 
 # COMMAND ----------
